@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "this" {
-  bucket = "tf-s3-state-bucket-1"
+  bucket        = "tf-s3-state-bucket-1"
   force_destroy = true
 }
 
@@ -14,3 +14,7 @@ resource "aws_dynamodb_table" "tf_state_lock_table" {
     type = "S"
   }
 }
+
+#add tags to both above resources
+# app - tf-create-s3-bucket
+# so that in future, we can track, which app is incurring how much cost
